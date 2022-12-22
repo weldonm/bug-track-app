@@ -9,8 +9,9 @@ export const Section = styled.section`
   min-height: 100vh;
 `;
 export const SectionMain = styled.section`
-  //background-color: blanchedalmond;
+  background-color: #40B8FF;
   width: 100%;
+  max-width: 1440px;
   margin: 25px 25px;
   margin-left: 55px;
   transition: 0.3s ease;
@@ -19,8 +20,8 @@ export const SectionMain = styled.section`
   gap: 45px;
   @media ${device.phone} {
     flex: 4;
-    margin: 25px 50px;
-    gap: 90px;
+    margin: 25px 40px;
+    gap: 55px;
   }
 `;
 
