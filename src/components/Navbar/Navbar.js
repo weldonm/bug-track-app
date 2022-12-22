@@ -15,7 +15,6 @@ const NavbarContainer = styled.nav`
   box-shadow: ${({ theme }) => theme.navbar_Shadow};
   flex: 2;
   max-width: 280px;
-  height: 100%;
   min-height: 100vh;
   display: grid;
   place-items: center;
