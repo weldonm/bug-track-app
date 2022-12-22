@@ -2,85 +2,70 @@ import React from "react";
 import styled from "styled-components";
 import {
   Block,
-  BlockHeader,
-  BlockOptions,
-  BlockListContainer,
-  BlockCategoryTitle,
-  BlockCategoryContainer,
-  BlockCategoryItem,
+  Block_Header,
+  Block_Options,
+  Block_EntriesContainer,
+  Block_EntryFlexList,
+  Block_EntryTitle,
+  Block_EntryItem,
 } from "../Shared/Block";
 
 const ProjectsContainer = styled(Block)`
   width: 100%;
-  //height: 100%;
   margin-top: 50px;
 `;
-
-const ProjectsHeader = styled(BlockHeader)``;
-
-const ProjectsOptions = styled(BlockOptions)``;
-
-const ListContainer = styled(BlockListContainer)`
-  div:nth-child(1) {
+const Header = styled(Block_Header)``;
+const Options = styled(Block_Options)``;
+const EntriesContainer = styled(Block_EntriesContainer)``;
+const EntryFlexList = styled(Block_EntryFlexList)`
+  li:nth-child(1) {
     flex: 2;
   }
-  div:nth-child(2) {
+  li:nth-child(2) {
     flex: 5;
   }
-  div:nth-child(3) {
+  li:nth-child(3) {
     flex: 1;
   }
 `;
-
-const CategoryTitle = styled(BlockCategoryTitle)``;
-
-const CategoryContainer = styled(BlockCategoryContainer)`
+const EntryTitle = styled(Block_EntryTitle)``;
+const EntryItem = styled(Block_EntryItem)`
+  padding: 12px 0;
   font-size: 14px;
 `;
-
-const CategoryItem = styled(BlockCategoryItem)`
-  padding: 12px;
-`;
-
 const ProjectsList = ({ projectsList }) => {
   return (
     <ProjectsContainer>
-      <ProjectsHeader>
-        <span>Your Projects</span>
-        <span>All Projects</span>
-      </ProjectsHeader>
-      <ProjectsOptions>
+       {/* ----- Header ----- */}
+       <Header>
+        <span>Your Team</span>
+        <span>All Projects in Database</span>
+      </Header>
+
+      {/* ----- Options ----- */}
+      <Options>
         <div>Show Entries</div>
         <div>Search</div>
-      </ProjectsOptions>
-      <ListContainer>
-        <div>
-          <CategoryTitle>Project Name</CategoryTitle>
-          <CategoryContainer>
-            {projectsList.map((item) => (
-              <CategoryItem key={item.id}>{item.project_name}</CategoryItem>
-            ))}
-          </CategoryContainer>
-        </div>
-        <div>
-          <CategoryTitle>Description</CategoryTitle>
-          <CategoryContainer>
-            {projectsList.map((item) => (
-              <CategoryItem key={item.id}>{item.description}</CategoryItem>
-            ))}
-          </CategoryContainer>
-        </div>
-        <div>
-          <CategoryTitle>...</CategoryTitle>
-          <CategoryContainer>
-            {projectsList.map((item) => (
-              <CategoryItem key={item.id}>{item.id}</CategoryItem>
-            ))}
-          </CategoryContainer>
-        </div>
-      </ListContainer>
-    </ProjectsContainer>
-  );
-};
+        </Options>
 
+<EntriesContainer>
+  {/* ----- Titles ----- */}
+  <EntryFlexList>
+    <EntryTitle>Project Name</EntryTitle>
+    <EntryTitle>Description</EntryTitle>
+    <EntryTitle>/</EntryTitle>
+  </EntryFlexList>
+
+  {/* ----- Data ----- */}
+  {projectsList.map((item) => (
+    <EntryFlexList key={item.id}>
+      <EntryItem>{item.project_name}</EntryItem>
+      <EntryItem>{item.description}</EntryItem>
+      <EntryItem>{item.id}</EntryItem>
+    </EntryFlexList>
+  ))}
+</EntriesContainer>
+</ProjectsContainer>
+);
+};
 export default ProjectsList;

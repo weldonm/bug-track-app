@@ -2,12 +2,12 @@
     "dashboardMenu": [
       { "name": "Home", "src": "dashboard_Home", "link": "/" },
       {
-        "name": "Manage User Roles",
+        "name": "Manage Roles",
         "src": "manage_Role",
         "link": "/manage-role"
       },
       {
-        "name": "Manage User Projects",
+        "name": "Manage Projects",
         "src": "manage_Users",
         "link": "/manage-project"
       },

@@ -17,7 +17,7 @@ const ProjectsPage = () => {
   return (
     <SectionContent>
       <Title>Projects</Title>
-      <CreateProjectButton>Create new project</CreateProjectButton>
+      <CreateProjectButton>Create New Project</CreateProjectButton>
       <ProjectsList projectsList={Data_ProjectsList} />
     </SectionContent>
   );

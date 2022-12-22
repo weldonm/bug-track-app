@@ -26,7 +26,7 @@ const UserRolesContainer = styled.div`
 const ManageRoles = () => {
   return (
     <SectionContent>
-      <Title>Manage User Roles</Title>
+      <Title>Manage Roles</Title>
       <UserRolesContainer>
         <AssignUser />
         <UserList />

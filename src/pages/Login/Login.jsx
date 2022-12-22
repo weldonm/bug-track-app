@@ -7,7 +7,7 @@ const Title = styled(PageTitle)``;
 const Login = () => {
   return (
     <>
-      <Title>Login Page</Title>;
+      <Title>Login</Title>;
     </>
   );
 };
