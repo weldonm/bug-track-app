@@ -1,6 +1,5 @@
 export const TicketsList = [
     {
-      id: 0,
       title: "ticket_1",
       project_name: "Project: 1",
       developer_assigned: "Supp_1",
@@ -10,7 +9,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 1,
       title: "ticket_2",
       project_name: "Project: 2",
       developer_assigned: "Supp_2",
@@ -20,7 +18,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 2,
       title: "ticket_3",
       project_name: "Project: 2",
       developer_assigned: "Supp_2",
@@ -30,7 +27,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 3,
       title: "ticket_4",
       project_name: "Project: 4",
       developer_assigned: "Supp_1",
@@ -40,7 +36,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 4,
       title: "ticket_5",
       project_name: "Project: 5",
       developer_assigned: "Supp_3",
@@ -50,7 +45,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 5,
       title: "ticket_6",
       project_name: "Project: 0",
       developer_assigned: "Supp_1",
@@ -60,7 +54,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 6,
       title: "ticket_7",
       project_name: "Project: 8",
       developer_assigned: "Supp_1",
@@ -70,7 +63,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 7,
       title: "ticket_8",
       project_name: "Project: 6",
       developer_assigned: "Supp_2",
@@ -80,7 +72,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 8,
       title: "ticket_9",
       project_name: "Project: 4",
       developer_assigned: "Supp_3",
@@ -90,7 +81,6 @@ export const TicketsList = [
       created: "12/22/22 5:55pm",
     },
     {
-      id: 9,
       title: "ticket_10",
       project_name: "Project: 5",
       developer_assigned: "Supp_3",

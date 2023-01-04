@@ -2,10 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { device } from "../../shared/breakpoints";
-import useMenuItems from "../../hooks/useMenuItems";
+import { dashboardMenu } from "../../data/Data_Menu";
 
 const ContainerMenu = ({ setShowMenu }) => {
-  const dashboardMenu = useMenuItems();
 
   return (
     <MenuContainer>
@@ -19,7 +18,6 @@ const ContainerMenu = ({ setShowMenu }) => {
     </MenuContainer>
   );
 };
-
 const MenuContainer = styled.ul`
   //background-color: rgba(249, 44, 140, 0.2);
   width: 100%;
@@ -27,7 +25,6 @@ const MenuContainer = styled.ul`
   flex-direction: column;
   justify-content: center;
 `;
-
 const MenuItem = styled.li`
   //background-color: rgba(149, 144, 140, 0.2);
   width: 100%;
@@ -35,21 +32,19 @@ const MenuItem = styled.li`
   margin: 25px 0px;
   cursor: pointer;
 `;
-
 const NavItem = styled(NavLink)`
   display: flex;
   gap: 15px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   color: ${({ theme }) => theme.main_Font_Color};
   @media ${device.phone} {
-    font-size: 16px;
+    font-size: 15px;
   }
   &.active {
     color: ${({ theme }) => theme.active_Link};
   }
 `;
-
 const MenuIcon = styled.img.attrs((props) => ({
   src: props.theme.Menu_Icon_Source[props.src],
 }))`
@@ -58,6 +53,4 @@ const MenuIcon = styled.img.attrs((props) => ({
   opacity: 0.8;
   transition: 0.3s ease;
 `;
-
-
 export default ContainerMenu;

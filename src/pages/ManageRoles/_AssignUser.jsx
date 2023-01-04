@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { device } from "../../shared/breakpoints";
-import { Button_MainStyle } from "../../shared/Buttons";
+import { Divider_Horizontal as Divider } from "../../components/Dividers/Dividers";
+import { Button_MainStyle } from "../../components/Buttons/Buttons";
 
 const AssignUserContainer = styled.form`
-  //background-color: #b08d5e;
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -12,9 +12,7 @@ const AssignUserContainer = styled.form`
   gap: 40px;
 `;
 
-const Divider = styled.div`
-  background-color: ${({ theme }) => theme.divider_Color};
-  height: 1px;
+const DividerLine = styled(Divider)`
   align-self: left;
   @media ${device.tablet} {
     width: 100%;
@@ -86,7 +84,6 @@ const SelectRole = styled.select`
 `;
 
 const OptionRole = styled.option`
-  // background-color: blue;
   padding: 5px 0;
 `;
 
@@ -94,62 +91,81 @@ const SubmitButton = styled(Button_MainStyle)`
   margin-top: 20px;
   @media ${device.tablet} {
     width: 85%;
-    //max-width: none;
   }
 `;
 
 const AssignUser = ({ userList }) => {
-  const [userSelected, setUserSelected] = useState();
+  const [usersSelected, setUsersSelected] = useState({});
   const [roleSelected, setRoleSelected] = useState("none");
-
   const RoleList = [
-    { value: "none", label: "Select Role/None" },
+    { value: "none", label: "None (Pending Assignement)" },
     { value: "admin", label: "Admin" },
     { value: "project_manager", label: "Project Manager" },
-    { value: "developer", label: "Developer" },
+    { value: "developer", label: "Support" },
     { value: "submitter", label: "Submitter" },
   ];
 
+  // Form to assign user roles
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
   };
 
+  // Handles multiple users
+  const handleUserSelect = (userID) => {
+    if (userID in usersSelected) {
+      setUsersSelected((current) => {
+        const copy = { ...current };
+        delete copy[userID];
+        return copy;
+      });
+    } else {
+      setUsersSelected((current) => ({ ...current, [userID]: userID }));
+    }
+  };
+
   return (
     <AssignUserContainer onSubmit={(e) => handleSubmit(e)}>
+      {/* ----- Select Users ----- */}
       <UserSelection>
         <div>Select 1 or more Users</div>
         <SelectionContainer>
-        {userList.map((user) => (
+          {userList.map((user) => (
             <SelectUser
-              onClick={() => setUserSelected(user.id)}
-              isSelected={userSelected === user.id}
-              key={user.id}
-            >
-              {user.user_name}
-            </SelectUser>
-          ))}
-        </SelectionContainer>
-      </UserSelection>
-      <Divider />
+            onClick={() => handleUserSelect(user.email)}
+              isSelected={user.email in usersSelected}
+              key={user.email}
+          >
+            {user.user_name}
+          </SelectUser>
+        ))}
+      </SelectionContainer>
+    </UserSelection>
+    <DividerLine />
 
-      <UserAssign>
-        <div>Select a Role to assign</div>
+    {/* ----- Assign User Role ----- */}
+    <UserAssign>
+      <div>Select User Role</div>
 
-        <SelectRole
-          onChange={(e) => setRoleSelected(e.target.value)}
-          value={roleSelected}
-        >
-            {RoleList.map((role, index) => (
-            <OptionRole key={index} value={role.value}>
-              {role.label}
-            </OptionRole>
-          ))}
-        </SelectRole>
-        <SubmitButton type="submit">Submit</SubmitButton>
-      </UserAssign>
-    </AssignUserContainer>
-  );
+      <SelectRole
+         onChange={(e) => {
+          setRoleSelected(e.target.value);
+          console.log(roleSelected);
+        }}
+        defaultValue={""}
+      >
+        <OptionRole value={""} disabled>
+           Select Role:
+        </OptionRole>
+        {RoleList.map((role, index) => (
+          <OptionRole key={index} value={role.value}>
+            {role.label}
+          </OptionRole>
+        ))}
+      </SelectRole>
+      <SubmitButton type="submit">Submit</SubmitButton>
+    </UserAssign>
+  </AssignUserContainer>
+);
 };
-
 export default AssignUser;

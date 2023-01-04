@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { device } from "../../shared/breakpoints";
 import SearchIcon from "@mui/icons-material/Search";
-import { InputField } from "../../shared/inputField";
+import { InputStyle } from "../Input/InputStyle";
 
 const SearchContainer = styled.form`
   display: flex;
   align-items: center;
   position: relative;
 `;
-
 const SearchIconWrap = styled.button`
   display: grid;
   place-items: center;
@@ -27,14 +26,10 @@ const SearchIconWrap = styled.button`
     opacity: 0.8;
   }
 `;
-
-const SearchInputField = styled(InputField)`
+const Input = styled(InputStyle)`
   width: 180px;
   padding: 11px 12px 11px 38px;
-  background-color: ${({ theme }) => theme.form_Background};
-  color: ${({ theme }) => theme.main_Font_Color};
   &::placeholder {
-    color: ${({ theme }) => theme.main_Font_Color};
     font-size: 14px;
   }
   @media ${device.phone_Small} {
@@ -44,21 +39,18 @@ const SearchInputField = styled(InputField)`
     width: 300px;
   }
 `;
-
 const SearchInput = () => {
   const [search, setSearch] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    console.log("search submitted");
   };
-
   return (
     <SearchContainer onSubmit={(e) => handleSubmit(e)}>
       <SearchIconWrap icon_Opacity={search.length > 0 ? "full" : ""}>
         <SearchIcon />
       </SearchIconWrap>
-      <SearchInputField
+      <Input
         name="search"
         type="text"
         placeholder="Search Files..."
@@ -69,5 +61,4 @@ const SearchInput = () => {
     </SearchContainer>
   );
 };
-
 export default SearchInput;

@@ -10,7 +10,7 @@ import Register from "./pages/Register/Register";
 import Unauthorized from "./pages/Unauthorized/Unauthorized";
 import Home from "./pages/Home/Home";
 import ManageRoles from "./pages/ManageRoles/ManageRoles";
-import ProjectManagement from "./pages/ManageProjects/ProjectManagement";
+import ManageProjects from "./pages/ManageProjects/ManageProjects";
 import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import TicketsPage from "./pages/TicketsPage/TicketsPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
@@ -42,7 +42,7 @@ function App() {
               {/* protected routes */}
               <Route path="/" element={<Home />} />
               <Route path="/manage-role" element={<ManageRoles />} />
-              <Route path="/manage-project" element={<ProjectManagement />} />
+              <Route path="/manage-project" element={<ManageProjects />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/tickets" element={<TicketsPage />} />
               <Route path="/profile" element={<ProfilePage />} />

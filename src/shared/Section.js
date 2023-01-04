@@ -9,11 +9,9 @@ export const Section = styled.section`
   min-height: 100vh;
 `;
 export const SectionMain = styled.section`
-  background-color: #40B8FF;
   width: 100%;
   max-width: 1440px;
   margin: 25px 25px;
-  margin-left: 55px;
   transition: 0.3s ease;
   display: flex;
   flex-direction: column;

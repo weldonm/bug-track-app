@@ -2,12 +2,12 @@ import React from "react";
 import { SectionContent } from "../../shared/Section";
 import { PageTitle as Title } from "../../components/Titles/PageTitle";
 
-const Home = () => {
+const ManageProjects = () => {
   return (
     <SectionContent>
-      <Title>Home Page</Title>
+      <Title>Manage Projects</Title>
     </SectionContent>
   );
 };
 
-export default Home;
+export default ManageProjects;
