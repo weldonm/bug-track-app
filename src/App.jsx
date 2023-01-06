@@ -18,15 +18,16 @@ import Missing from "./pages/Missing/Missing";
 
 const AppContainer = styled.div`
   background-color: ${({ theme }) => theme.main_Background};
+  background-color: #bee8ff !important;
 `;
 
 function App() {
-   // ----- initialise and toggle theme -----
-   const themeMode = useMemo(() => {
+  // ----- initialise and toggle theme -----
+  const themeMode = useMemo(() => {
     return useTheme === "light" ? lightTheme : darkTheme;
-   }, []);
-   // ----- -----
- 
+  }, []);
+  // ----- -----
+
   return (
     <ThemeProvider theme={themeMode}>
       <>

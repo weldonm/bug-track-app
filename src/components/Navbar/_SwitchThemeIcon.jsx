@@ -3,7 +3,6 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -22,12 +21,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+        backgroundColor: theme.palette.mode === "dark" ? "#7990a7" : "#9caec1",
       },
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
+    backgroundColor: theme.palette.mode === "dark" ? "#0043b0" : "#001f3d",
     width: 32,
     height: 32,
     "&:before": {
@@ -46,12 +45,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+    backgroundColor: theme.palette.mode === "dark" ? "#718daa" : "#8ba3bb",
     borderRadius: 20 / 2,
   },
 }));
 
-const SwitchTheme = ({ checked }) => {
+const SwitchThemeIcon = ({ checked }) => {
   return (
     <FormGroup>
       <FormControlLabel
@@ -63,4 +62,4 @@ const SwitchTheme = ({ checked }) => {
   );
 };
 
-export default SwitchTheme;
+export default SwitchThemeIcon;

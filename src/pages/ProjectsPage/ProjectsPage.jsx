@@ -1,24 +1,30 @@
 import React from "react";
-import styled from "styled-components";
 import { SectionContent } from "../../shared/Section";
-import { PageTitle as Title } from "../../components/Titles/PageTitle";
-import { Button_MainStyle } from "../../components/Buttons/Buttons";
-import { ProjectsList as Data_ProjectsList } from "../../data/Data_ProjectsList";
+import ButtonBasic from "../../components/Buttons/Button_Basic";
+import { ProjectsList as Data_ProjectList } from "../../data/Data_ProjectsList";
 import ProjectsList from "./_ProjectsList";
 
-const CreateProjectButton = styled(Button_MainStyle)`
-  padding: 10px 20px;
-  margin-top: -20px;
-`;
-
+const ButtonStyle = {
+  padding: "10px 20px",
+  margin: "-20px 0 0 0",
+};
 const ProjectsPage = () => {
+  // Submit Form to Create a New Project
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("new project");
+  };
   return (
     <SectionContent>
-      <Title>Projects</Title>
-      <CreateProjectButton>Create New Project</CreateProjectButton>
-      <ProjectsList projectsList={Data_ProjectsList} />
+      <h1>My Projects</h1>
+
+      <ButtonBasic
+        buttonStyle={ButtonStyle}
+        text={"Create new Project"}
+        handleSubmit={handleSubmit}
+      />
+      <ProjectsList projectList={Data_ProjectList} />
     </SectionContent>
   );
 };
-
 export default ProjectsPage;
