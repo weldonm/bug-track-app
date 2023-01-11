@@ -47,7 +47,7 @@ const NavbarHeader = () => {
           Demo Admin <ArrowDropDown />
         </UserName>
         {/* User Role Info */}
-        <TagInfo tagColor={"Cyan"} tagText={"admin"} />
+        <TagInfo tagColor={"Blue"} tagText={"admin"} />
       </UserDetails>
     </Header>
   );

@@ -18,7 +18,7 @@ export const SectionMain = styled.section`
 `;
 
 export const SectionContent = styled.section`
-  margin-left: 260px;
+  margin-left: 250px;
   padding: 10px;
   transition: 0.3s ease;
   @media ${device.navbarBreakpoint} {
